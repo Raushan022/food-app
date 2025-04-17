@@ -5,10 +5,17 @@
   text-align: center;
 } */
 
+.body {
+  margin: 0px 80px;
+}
+
 .header {
   display: flex;
   justify-content: space-between;
-  border: 1px solid black;
+  border-bottom: 1px solid #d3d3d3;
+  /* light grey */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+  /* subtle shadow below */
 }
 
 .logo {
@@ -30,11 +37,21 @@
   margin: 10px;
 }
 
+.res-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
 .res-card {
-  width: 200px;
-  height: 300px;
-  border: 1px solid black;
+  width: 300px;
+  /* height: 300px; */
   padding: 5px;
+}
+
+.res-card:hover {
+  border: 1px solid black;
+  cursor: pointer;
 }
 
 .search {
