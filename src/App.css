@@ -1,0 +1,47 @@
+/* #root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+} */
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid black;
+}
+
+.logo {
+  width: 120px;
+}
+
+.nav-items {
+  padding: 0px 20px;
+}
+
+.nav-items>ul {
+  font-size: 20px;
+  display: flex;
+  list-style-type: none;
+}
+
+.nav-items>ul>li {
+  padding: 10px;
+  margin: 10px;
+}
+
+.res-card {
+  width: 200px;
+  height: 300px;
+  border: 1px solid black;
+  padding: 5px;
+}
+
+.search {
+  padding: 10px;
+}
+
+.res-logo {
+  /* padding: 5px; */
+  width: 100%;
+}
