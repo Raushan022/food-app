@@ -710,18 +710,22 @@ const resList = [
 
 const ResturantCard = (props) => {
   // console.log(props.resData?.info);
+  const { name, cuisines, avgRating, costForTwo, cloudinaryImageId } =
+    props?.resData?.info || {};
+  const { deliveryTime } = props?.resData?.info?.sla || {};
+
   return (
     <div className="res-card" style={{ backgroundColor: "#f0f0f0" }}>
       <img
         className="res-logo"
-        src={`https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/${props?.resData?.info?.cloudinaryImageId}`}
+        src={`https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/${cloudinaryImageId}`}
         alt="res-logo"
       />
-      <h3>{props?.resData?.info?.name}</h3>
-      <h5>{props?.resData?.info?.cuisines.join(", ")}</h5>
-      <h5>{props?.resData?.info?.avgRating}</h5>
-      <h5>{props?.resData?.info?.costForTwo}</h5>
-      <h6>{props?.resData?.info?.sla?.deliveryTime} minutes</h6>
+      <h3>{name}</h3>
+      <h5>{cuisines.join(", ")}</h5>
+      <h5>{avgRating}</h5>
+      <h5>{costForTwo}</h5>
+      <h6>{deliveryTime} minutes</h6>
     </div>
   );
 };
@@ -731,14 +735,9 @@ const Body = () => {
     <div className="body">
       <div className="search">Search</div>
       <div className="res-container">
-        <ResturantCard resData={resList[0]} />
-        <ResturantCard resData={resList[1]} />
-        <ResturantCard resData={resList[2]} />
-        <ResturantCard resData={resList[3]} />
-        <ResturantCard resData={resList[4]} />
-        <ResturantCard resData={resList[5]} />
-        <ResturantCard resData={resList[6]} />
-        <ResturantCard resData={resList[7]} />
+        {resList.map((resturant) => (
+          <ResturantCard resData={resturant} />
+        ))}
       </div>
     </div>
   );
