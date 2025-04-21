@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import ResturantCard from "./ResturantCard";
+import Shimmer from "./Shimmer";
 
 const Body = () => {
   //Local State Variable - super powerful variable
@@ -31,19 +32,29 @@ const Body = () => {
     );
   };
 
+  // if (listOfResturant.length === 0) {
+  //   return <Shimmer />;
+  // }
+
   return (
-    <div className="body">
-      <div className="filter">
-        <button className="filter-btn" onClick={handleFilter}>
-          Filter Resturant
-        </button>
-      </div>
-      <div className="res-container">
-        {listOfResturant.map((resturant) => (
-          <ResturantCard key={resturant.info.id} resData={resturant} />
-        ))}
-      </div>
-    </div>
+    <>
+      {listOfResturant.length === 0 ? (
+        <Shimmer />
+      ) : (
+        <div className="body">
+          <div className="filter">
+            <button className="filter-btn" onClick={handleFilter}>
+              Filter Resturant
+            </button>
+          </div>
+          <div className="res-container">
+            {listOfResturant.map((resturant) => (
+              <ResturantCard key={resturant.info.id} resData={resturant} />
+            ))}
+          </div>
+        </div>
+      )}
+    </>
   );
 };
 
