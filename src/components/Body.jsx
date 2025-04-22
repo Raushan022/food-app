@@ -9,7 +9,7 @@ const Body = () => {
   const [searchText, setSearchText] = useState("");
 
   //whenever state variable update, react triggers a reconciliation cycle(re-renders the component)
-  console.log("Body Rendered");
+  // console.log("Body Rendered");
 
   const handleFilter = () => {
     const filterdResturant = listOfResturant.filter((res) => {
@@ -29,9 +29,9 @@ const Body = () => {
 
     const json = await data.json();
     // console.log(json);
-    console.log(
-      json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
-    );
+    // console.log(
+    //   json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+    // );
     setListOfResturant(
       json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
