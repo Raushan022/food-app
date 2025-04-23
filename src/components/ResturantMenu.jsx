@@ -1,18 +1,22 @@
 import React, { useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
+import { useParams } from "react-router-dom";
+import { MENU_API } from "../utils/constants";
 
 const ResturantMenu = () => {
   const [resInfo, setResInfo] = useState(null);
   const [resturantName, setResturantName] = useState("");
+
+  const { resId } = useParams();
+  //   console.log(resId);
+  //   console.log(MENU_API + resId);
 
   useEffect(() => {
     fetchMenu();
   }, []);
 
   const fetchMenu = async () => {
-    const data = await fetch(
-      "https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=26.1286243&lng=91.8012675&restaurantId=934502&catalog_qa=undefined&submitAction=ENTER"
-    );
+    const data = await fetch(MENU_API + resId);
 
     const json = await data.json();
     //  console.log(json);
@@ -25,9 +29,12 @@ const ResturantMenu = () => {
   };
 
   const { itemCards } =
-    resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[4]?.card
+    resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[7]?.card
       ?.card || {};
   //   console.log(itemCards);
+  //   console.log(
+  //     resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[6]?.card?.card
+  //   );
 
   if (resturantName.length === 0) return <Shimmer />;
   return (
