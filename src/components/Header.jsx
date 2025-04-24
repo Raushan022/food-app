@@ -22,16 +22,30 @@ const Header = () => {
       <div className="nav-items">
         <ul>
           <li>
-            <Link to="/">Home</Link>
+            <Link to="/" style={{ textDecoration: "none", color: "inherit" }}>
+              Home
+            </Link>
           </li>
           <li>
-            <Link to="/about">About us</Link>
+            <Link
+              to="/about"
+              style={{ textDecoration: "none", color: "inherit" }}
+            >
+              About us
+            </Link>
           </li>
           <li>
-            <Link to="/contact">Contact us</Link>
+            <Link
+              to="/contact"
+              style={{ textDecoration: "none", color: "inherit" }}
+            >
+              Contact us
+            </Link>
           </li>
           <li>
-            <Link>Cart</Link>
+            <Link style={{ textDecoration: "none", color: "inherit" }}>
+              Cart
+            </Link>
           </li>
           <button
             className="login-btn"
