@@ -1,40 +1,21 @@
-import React, { useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
 import { useParams } from "react-router-dom";
-import { MENU_API } from "../utils/constants";
+import useResturantMenu from "../utils/useResturantMenu";
 
 const ResturantMenu = () => {
-  const [resInfo, setResInfo] = useState(null);
-  const [resturantName, setResturantName] = useState("");
-
   const { resId } = useParams();
   //   console.log(resId);
-  //   console.log(MENU_API + resId);
 
-  useEffect(() => {
-    fetchMenu();
-  }, []);
+  const [resInfo, resturantName] = useResturantMenu(resId); //custom hook that returns resInfo and resturantName
+  console.log(resInfo);
 
-  const fetchMenu = async () => {
-    const data = await fetch(MENU_API + resId);
+  // const { itemCards } =
+  //   resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[7]?.card
+  //     ?.card || {};
 
-    const json = await data.json();
-    //  console.log(json);
-    //  console.log(
-    //    json?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card
-    //      ?.card?.itemCards
-    //  );
-    setResInfo(json?.data);
-    setResturantName(json.data?.cards[0]?.card?.card?.text);
-  };
-
-  const { itemCards } =
-    resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[7]?.card
-      ?.card || {};
-  //   console.log(itemCards);
-  //   console.log(
-  //     resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[6]?.card?.card
-  //   );
+  const itemCards =
+    resInfo?.cards?.[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards?.[7]?.card
+      ?.card?.itemCards || [];
 
   if (resturantName.length === 0) return <Shimmer />;
   return (
