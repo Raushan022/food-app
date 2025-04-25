@@ -93,3 +93,13 @@
 .login-btn {
   padding: 0px 20px;
 }
+
+.user-card {
+  padding: 10px;
+  border: 1px solid black;
+}
+
+.class-user-card {
+  padding: 10px;
+  border: 1px solid red;
+}
