@@ -57,7 +57,7 @@ const Body = () => {
       {listOfResturant.length === 0 ? (
         <Shimmer />
       ) : (
-        <div className="body">
+        <div className="mx-[80px] my-0">
           <div className="filter">
             <button className="filter-btn" onClick={handleFilter}>
               Filter Resturant

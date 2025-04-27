@@ -18,49 +18,40 @@ const Header = () => {
   const onlineStatus = useOnlineStatus();
 
   return (
-    <div className="header">
-      <div className="logo-container">
-        <img className="logo" src={LOGO_URL} alt="logo" />
+    <div className="flex justify-between border-b border-[#d3d3d3] shadow-md shadow-[rgba(0,0,0,0.15)]">
+      <div>
+        <img className="w-32" src={LOGO_URL} alt="logo" />
       </div>
-      <div className="nav-items">
-        <ul>
-          <li>Online Status: {onlineStatus ? "✅" : "🔴"}</li>
-          <li>
-            <Link to="/" style={{ textDecoration: "none", color: "inherit" }}>
+      <div className="px-5 py-0">
+        <ul className="flex list-none text-[20px]">
+          <li className="p-[10px] m-[10px]">
+            Online Status: {onlineStatus ? "✅" : "🔴"}
+          </li>
+          <li className="p-[10px] m-[10px]">
+            <Link to="/" className="no-underline text-inherit">
               Home
             </Link>
           </li>
-          <li>
-            <Link
-              to="/about"
-              style={{ textDecoration: "none", color: "inherit" }}
-            >
+          <li className="p-[10px] m-[10px]">
+            <Link to="/about" className="no-underline text-inherit">
               About us
             </Link>
           </li>
-          <li>
-            <Link
-              to="/contact"
-              style={{ textDecoration: "none", color: "inherit" }}
-            >
+          <li className="p-[10px] m-[10px]">
+            <Link to="/contact" className="no-underline text-inherit">
               Contact us
             </Link>
           </li>
-          <li>
-            <Link
-              to="/grocery"
-              style={{ textDecoration: "none", color: "inherit" }}
-            >
+          <li className="p-[10px] m-[10px]">
+            <Link to="/grocery" className="no-underline text-inherit">
               Grocery
             </Link>
           </li>
-          <li>
-            <Link style={{ textDecoration: "none", color: "inherit" }}>
-              Cart
-            </Link>
+          <li className="p-[10px] m-[10px]">
+            <Link className="no-underline text-inherit">Cart</Link>
           </li>
           <button
-            className="login-btn"
+            className="px-5 py-0"
             onClick={() =>
               setBtnNameReact(btnNameReact === "Login" ? "Logout" : "Login")
             }
