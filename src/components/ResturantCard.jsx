@@ -13,7 +13,11 @@ const ResturantCard = (props) => {
         alt="res-logo"
       />
       <h3>{name}</h3>
-      <h5>{cuisines.join(", ")}</h5>
+      <h5>
+        {cuisines.join(", ").length > 30
+          ? cuisines.join(", ").slice(0, 30) + "..."
+          : cuisines.join(", ")}
+      </h5>
       <h5>{avgRating}</h5>
       <h5>{costForTwo}</h5>
       <h6>{sla.slaString} </h6>
