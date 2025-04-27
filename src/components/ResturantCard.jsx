@@ -6,9 +6,9 @@ const ResturantCard = (props) => {
     props?.resData?.info || {};
 
   return (
-    <div className="res-card" style={{ backgroundColor: "#f0f0f0" }}>
+    <div className="w-[300px] p-[5px] bg-[#f0f0f0] hover:border hover:border-black cursor-pointer">
       <img
-        className="res-logo"
+        className="w-full h-[280px]"
         src={`${CDN_URL}${cloudinaryImageId}`}
         alt="res-logo"
       />
