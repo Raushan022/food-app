@@ -22,7 +22,7 @@ const Header = () => {
       <div>
         <img className="w-32" src={LOGO_URL} alt="logo" />
       </div>
-      <div className="px-5 py-0">
+      <div className="px-5 py-5 ">
         <ul className="flex list-none text-[20px]">
           <li className="p-[10px] m-[10px]">
             Online Status: {onlineStatus ? "✅" : "🔴"}

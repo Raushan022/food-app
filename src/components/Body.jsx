@@ -46,6 +46,8 @@ const Body = () => {
   //   return <Shimmer />;
   // }
 
+  console.log(listOfResturant);
+
   const onlineStatus = useOnlineStatus();
 
   if (onlineStatus == false) {
@@ -57,7 +59,7 @@ const Body = () => {
       {listOfResturant.length === 0 ? (
         <Shimmer />
       ) : (
-        <div className="mx-[80px] my-0">
+        <div className="mx-[80px] my-2">
           <div className="flex">
             <button className="m-[10px] cursor-pointer" onClick={handleFilter}>
               Filter Resturant
@@ -70,7 +72,7 @@ const Body = () => {
                 className=" border border-gray-300 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-blue-500"
               />
               <button
-                className="ml-1.5"
+                className="ml-1.5 cursor-pointer"
                 onClick={() => {
                   //filter the resturant cards by searched item and update the UI
                   const searchedResturant = listOfResturant.filter((res) =>

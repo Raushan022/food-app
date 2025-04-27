@@ -25,7 +25,7 @@ class UserClass extends React.Component {
   render() {
     const { login, html_url } = this.state.userInfo;
     return (
-      <div className="class-user-card">
+      <div className="p-[10px] border border-red-800">
         <h4>Login: {login}</h4>
         <h3>html url: {html_url}</h3>
         <h4>Contact: @raushan002</h4>
