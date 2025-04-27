@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import ResturantCard from "./ResturantCard";
+import ResturantCard, { withPromotedLabel } from "./ResturantCard";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
@@ -12,6 +12,8 @@ const Body = () => {
 
   //whenever state variable update, react triggers a reconciliation cycle(re-renders the component)
   // console.log("Body Rendered");
+
+  const ResturantCardPromoted = withPromotedLabel(ResturantCard);
 
   const handleFilter = () => {
     const filterdResturant = listOfResturant.filter((res) => {
@@ -45,8 +47,6 @@ const Body = () => {
   // if (listOfResturant.length === 0) {
   //   return <Shimmer />;
   // }
-
-  console.log(listOfResturant);
 
   const onlineStatus = useOnlineStatus();
 

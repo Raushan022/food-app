@@ -25,4 +25,21 @@ const ResturantCard = (props) => {
   );
 };
 
+//Highrt Order Function
+//input - ResturantCard
+//output - ResturantCardPromoted
+export const withPromotedLabel = (ResturantCard) => {
+  return (props) => {
+    console.log(...props);
+    return (
+      <div>
+        <label className="absolute bg-black text-white m-2 p-2 rounded-b-lg">
+          Promoted
+        </label>
+        <ResturantCard {...props} />
+      </div>
+    );
+  };
+};
+
 export default ResturantCard;
